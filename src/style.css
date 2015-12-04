@@ -1,38 +1,62 @@
 /* -------------------------------------------------
-   :: Global                                      ::
+   :: Global Setting                              ::
    ---------------------------------------------- */
 * {
   font-family: 'Roboto', sans-serif;
+  font-size: 18px;
 }
 
+/* Header */
+h1 {
+  padding: 0;
+  margin: 0;
+}
+
+.brand {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background-color: #F50057;
+}
+
+#logo {
+  margin-left: 50px;
+  font-size: 1.5em;
+  font-weight: 300;
+  color: #fff;
+}
+
+/* Main contents area */
+.main {
+  background-color: #fff;
+}
 
 /* -------------------------------------------------
    :: Mobile Styling                              ::
    ---------------------------------------------- */
-#logo {
-  margin-left: 50px;
-}
 .mobile {
   display: none;
   position: fixed;
   top: 70px;
   width: 100%;
 }
+
+/* Hamburger button */
 .mobile button {
   position: absolute;
-  top: -43px;
-  left: 10px;
+  top: -48px;
+  left: 15px;
   width: 24px;
   height: 24px;
   border: 0;
   background-image: url("./icons/ic_close_24px.svg");
-  background-color: #fff;
+  background-color: #F50057;
   outline: none;
 }
+
 .mobile button.expanded {
   border: 0;
   background-image: url("./icons/ic_menu_24px.svg");
-  background-color: #fff;
+  background-color: #F50057;
 }
 
 /* -------------------------------------------------
@@ -41,6 +65,7 @@
 .mobile a {
   display: block;
 }
+
 a {
   background: #fff;
   text-align: center;
@@ -50,15 +75,19 @@ a {
   color: #222;
   font-weight: bold;
 }
+
 a:hover,
 a:active,
 a:focus {
   background: #eee;
 }
+
 .desktop {
   display: block;
   overflow: hidden;
+  background-color: #fff;
 }
+
 .desktop a {
   padding: 20px 25px 20px 25px;
   float: left;

@@ -12,7 +12,9 @@
 
   <body>
     <header ng-controller="NavCtrl as navbar">
-      <h1 id="logo">My Books</h1>
+      <nav class="brand">
+        <h1 id="logo">My Books</h1>
+      </nav>
       <!-- navbar for mobile -->
       <nav class="mobile">
         <button></button>
@@ -30,7 +32,7 @@
       </nav>
     </header>
 
-    <main>
+    <main class="main">
       <section ng-controller="InterfaceCtrl as interface">
         <!-- welcome message -->
         <section ng-show="interface.welcomingMode">
