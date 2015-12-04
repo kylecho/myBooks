@@ -15,8 +15,27 @@
     </header>
 
     <main>
-      <section ng-controller="BookCtrl as main">
-        <section ng-repeat="book in main.getBooks()">
+      <!-- interface -->
+      <section ng-controller="InterfaceCtrl as interface">
+        <!-- welcome message -->
+        <section>
+          <h3>Welcome Back!</h3>
+          <p>It's been a while.</p>
+          <p>Read any new books lately?</p>
+        </section>
+        <!-- book register -->
+        <section>
+          <form ng-submit="interface.submit()">
+            <input type="text" ng-model="interface.title" />
+            <input type="text" ng-model="interface.author" />
+            <input type="submit" value="Add Book"/>
+          </form>
+        </section>
+      </section>
+
+      <!-- books -->
+      <section ng-controller="BookCtrl as collection">
+        <section ng-repeat="book in collection.getBooks()">
         <h3>{{book.title}}</h3>
         <p>By {{book.author}}</p>
         </section>
