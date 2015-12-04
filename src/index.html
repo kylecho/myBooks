@@ -17,6 +17,11 @@
     <main>
       <!-- interface -->
       <section ng-controller="InterfaceCtrl as interface">
+        <!-- sort interface -->
+        <section>
+          <button ng-click="interface.sortByTitle()">Sort by Title</button>
+          <button ng-click="interface.sortByAuthor()">Sort by Author</button>
+        </section>
         <!-- welcome message -->
         <section ng-show="interface.welcomingMode">
           <h3>Welcome Back!</h3>

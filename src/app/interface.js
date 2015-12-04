@@ -11,4 +11,12 @@ angular.module('app.interface', [])
       interface.addingMode = false;
       interface.welcomingMode = true;
     };
+
+    interface.sortByTitle = function () {
+      BooksService.sortByTitle();
+    };
+
+    interface.sortByAuthor = function () {
+      BooksService.sortByAuthor();
+    };
   });
