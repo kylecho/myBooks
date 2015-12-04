@@ -73,12 +73,12 @@ angular.module('app.books.model', [])
     }
 
     function addBook (book) {
-      if (isDup(book)) {
-        alert('The book with the same title already exists in your collection. Please try again.');
-      } else if (!book.title) {
+      if (!book.title) {
         alert('Please enter the title of the book.');
       } else if (!book.author) {
         alert('Please enter the author of the book.');
+      } else if (isDup(book)) {
+        alert('The book with the same title already exists in your collection. Please try again.');
       } else {
         books.push(book);
       }
