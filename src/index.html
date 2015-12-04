@@ -12,28 +12,34 @@
 
   <body>
     <header ng-controller="NavCtrl as navbar">
+
       <nav class="navbar">
         <h1 id="logo">My books</h1>
       </nav>
+
       <!-- navbar for mobile -->
       <nav class="mobile">
-        <button></button>
+        <button id="hamburger"></button>
         <section>
           <section ng-repeat="book in navbar.getNavbarBooks()">
             <a href="#">{{book.title}}</a>
           </section>
         </section>
       </nav>
+
       <!-- navbar for desktop -->
       <nav class="desktop">
         <section ng-repeat="book in navbar.getNavbarBooks()">
           <a href="#">{{book.title}}</a>
         </section>
       </nav>
+
     </header>
 
     <main class="main">
+
       <section ng-controller="InterfaceCtrl as interface">
+
         <!-- welcome message -->
         <section class="card welcome" ng-show="interface.welcomingMode">
           <h3>Welcome Back!</h3>
@@ -42,7 +48,8 @@
           <button class="btn btn-no" ng-click="interface.welcomingMode = false">No</button>
           <button class="btn btn-yes"ng-click="interface.welcomingMode = false; interface.addingMode = true">Yes</button>
         </section>
-        <!-- book register -->
+
+        <!-- book registery -->
         <section class="card adding" ng-show="interface.addingMode">
           <form ng-submit="interface.submit()">
             <section>
@@ -60,11 +67,13 @@
             <input class="btn btn-add" type="submit" value="Add a Book"/>
           </form>
         </section>
+
         <!-- sort interface -->
         <section class="card sort">
           <button class="btn" ng-click="interface.sortByTitle()">Sort by Title</button>
           <button class="btn" ng-click="interface.sortByAuthor()">Sort by Author</button>
         </section>
+
       </section>
 
       <!-- books -->
@@ -76,9 +85,10 @@
           </section>
         </section>
       </section>
+
     </main>
 
-    <!-- lib/scripts -->
+    <!-- library/scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="app.js"></script>
@@ -89,7 +99,7 @@
 
     <!-- script for dropdown menu -->
     <script>
-      $('button').click(function() {
+      $('#hamburger').click(function() {
         $(this).toggleClass('expanded').siblings('section').toggle();
       });
     </script>
