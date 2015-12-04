@@ -7,15 +7,26 @@
   </head>
 
   <body>
-
-    <header>
-      <h1>My Books</h1>
-      <nav>
+    <header ng-controller="NavCtrl as navbar">
+      <h1 id="logo">My Books</h1>
+      <!-- navbar for mobile -->
+      <nav class="mobile">
+        <button></button>
+        <section>
+          <section ng-repeat="book in navbar.getNavbarBooks()">
+            <a href="#">{{book.title}}</a>
+          </section>
+        </section>
+      </nav>
+      <!-- navbar for desktop -->
+      <nav class="desktop">
+        <section ng-repeat="book in navbar.getNavbarBooks()">
+          <a href="#">{{book.title}}</a>
+        </section>
       </nav>
     </header>
 
     <main>
-      <!-- interface -->
       <section ng-controller="InterfaceCtrl as interface">
         <!-- sort interface -->
         <section>
@@ -51,10 +62,18 @@
 
     <!-- lib/scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="app.js"></script>
     <script src="app/book.model.js"></script>
     <script src="app/nav.js"></script>
     <script src="app/interface.js"></script>
     <script src="app/book.js"></script>
+
+    <!-- script for dropdown menu -->
+    <script>
+      $('button').click(function() {
+        $(this).toggleClass('expanded').siblings('section').toggle();
+      });
+    </script>
   </body>
 </html>
