@@ -2,7 +2,7 @@
 <html ng-app="app">
   <head>
     <meta charset="utf-8">
-    <title>My Books</title>
+    <title>My books</title>
 
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
@@ -12,8 +12,8 @@
 
   <body>
     <header ng-controller="NavCtrl as navbar">
-      <nav class="brand">
-        <h1 id="logo">My Books</h1>
+      <nav class="navbar">
+        <h1 id="logo">My books</h1>
       </nav>
       <!-- navbar for mobile -->
       <nav class="mobile">
@@ -35,33 +35,45 @@
     <main class="main">
       <section ng-controller="InterfaceCtrl as interface">
         <!-- welcome message -->
-        <section ng-show="interface.welcomingMode">
+        <section class="card welcome" ng-show="interface.welcomingMode">
           <h3>Welcome Back!</h3>
           <p>It's been a while.</p>
           <p>Read any new books lately?</p>
-          <button ng-click="interface.welcomingMode = false">No</button>
-          <button ng-click="interface.welcomingMode = false; interface.addingMode = true">Yes</button>
+          <button class="btn btn-no" ng-click="interface.welcomingMode = false">No</button>
+          <button class="btn btn-yes"ng-click="interface.welcomingMode = false; interface.addingMode = true">Yes</button>
         </section>
         <!-- book register -->
-        <section ng-show="interface.addingMode">
+        <section class="card adding" ng-show="interface.addingMode">
           <form ng-submit="interface.submit()">
-            <input type="text" ng-model="interface.title" />
-            <input type="text" ng-model="interface.author" />
-            <input type="submit" value="Add Book"/>
+            <section>
+              <section>
+                <label for="title">Title</label>
+              </section>
+              <input id="title" type="text" ng-model="interface.title" />
+            </section>
+            <section>
+              <section>
+                <label for="author">Author</label>
+              </section>
+              <input id="author" type="text" ng-model="interface.author" />
+            </section>
+            <input class="btn btn-add" type="submit" value="Add a Book"/>
           </form>
         </section>
         <!-- sort interface -->
-        <section>
-          <button ng-click="interface.sortByTitle()">Sort by Title</button>
-          <button ng-click="interface.sortByAuthor()">Sort by Author</button>
+        <section class="card sort">
+          <button class="btn" ng-click="interface.sortByTitle()">Sort by Title</button>
+          <button class="btn" ng-click="interface.sortByAuthor()">Sort by Author</button>
         </section>
       </section>
 
       <!-- books -->
       <section ng-controller="BookCtrl as collection">
-        <section ng-repeat="book in collection.getBooks()">
-        <h3>{{book.title}}</h3>
-        <p>By {{book.author}}</p>
+        <section class="card book" ng-repeat="book in collection.getBooks()">
+          <section class="detail">
+            <h3>{{book.title}}</h3>
+            <p>By {{book.author}}</p>
+          </section>
         </section>
       </section>
     </main>
