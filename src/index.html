@@ -36,12 +36,13 @@
 
     </header>
 
-    <main class="main">
+    <main class="main wrapper">
+      <section class="row clearfix">
 
       <section ng-controller="InterfaceCtrl as interface">
 
         <!-- welcome message -->
-        <section class="card welcome" ng-show="interface.welcomingMode">
+        <section class="card welcome col-1-4" ng-show="interface.welcomingMode">
           <h3>Welcome Back!</h3>
           <p>It's been a while.</p>
           <p>Read any new books lately?</p>
@@ -50,7 +51,7 @@
         </section>
 
         <!-- book registery -->
-        <section class="card adding" ng-show="interface.addingMode">
+        <section class="card adding col-1-4" ng-show="interface.addingMode">
           <form ng-submit="interface.submit()">
             <section>
               <section>
@@ -69,7 +70,7 @@
         </section>
 
         <!-- sort interface -->
-        <section class="card sort">
+        <section class="card sort col-1-4">
           <button class="btn" ng-click="interface.sortByTitle()">Sort by Title</button>
           <button class="btn" ng-click="interface.sortByAuthor()">Sort by Author</button>
         </section>
@@ -78,7 +79,7 @@
 
       <!-- books -->
       <section ng-controller="BookCtrl as collection">
-        <section class="card book" ng-repeat="book in collection.getBooks()">
+        <section class="card book col-1-4" ng-repeat="book in collection.getBooks()">
           <section class="detail">
             <h3>{{book.title}}</h3>
             <p>By {{book.author}}</p>
@@ -86,6 +87,7 @@
         </section>
       </section>
 
+      </section>
     </main>
 
     <!-- library/scripts -->

@@ -1,10 +1,23 @@
 /* -------------------------------------------------
    :: Global Settings                             ::
    ---------------------------------------------- */
+
 * {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 18px;
+}
+
+/* resets */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /* Header */
@@ -28,6 +41,12 @@ h1 {
 /* Content Section */
 body {
   background-color: #ECEFF1;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 100%;
 }
 
 /* Card Styling */
@@ -97,14 +116,6 @@ body {
   color: #757575;
 }
 
-#cover {
-  padding: 0;
-  height: 100%;
-}
-
-.book .detail {
-}
-
 /* Buttons */
 .btn {
   font-weight: 400;
@@ -135,6 +146,7 @@ body {
 /* -------------------------------------------------
    :: Mobile Styling                              ::
    ---------------------------------------------- */
+
 .mobile {
   display: none;
   position: fixed;
@@ -164,6 +176,7 @@ body {
 /* -------------------------------------------------
    :: Link Styling                                ::
    ---------------------------------------------- */
+
 .mobile a {
   display: block;
 }
@@ -198,11 +211,47 @@ a:focus {
 /* -------------------------------------------------
    :: Break-points Settings                       ::
    ---------------------------------------------- */
-@media (max-width: 800px) {
+
+/* grid */
+.row {
+  margin: 0 -10px;
+  margin-bottom: 20px;
+}
+.row:last-child {
+  margin-bottom: 0;
+}
+[class*="col-"] {
+  padding: 10px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
   .mobile {
     display: block;
   }
   .desktop {
     display: none;
+  }
+}
+
+/* Tablet */
+@media all and ( min-width: 768px ) {
+  .col-1-4 {
+    float: left;
+    width: 45%;
+  }
+  .col-1-4:nth-child(4n+1) {
+    clear: both;
+  }
+}
+
+/* Desktop */
+@media all and ( min-width: 1200px ) {
+  .col-1-4 {
+    float: left;
+    width: 22.5%;
+  }
+  .col-1-4:nth-child(4n+1) {
+    clear: both;
   }
 }
