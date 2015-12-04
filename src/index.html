@@ -3,6 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>My Books</title>
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
 
@@ -28,11 +32,6 @@
 
     <main>
       <section ng-controller="InterfaceCtrl as interface">
-        <!-- sort interface -->
-        <section>
-          <button ng-click="interface.sortByTitle()">Sort by Title</button>
-          <button ng-click="interface.sortByAuthor()">Sort by Author</button>
-        </section>
         <!-- welcome message -->
         <section ng-show="interface.welcomingMode">
           <h3>Welcome Back!</h3>
@@ -48,6 +47,11 @@
             <input type="text" ng-model="interface.author" />
             <input type="submit" value="Add Book"/>
           </form>
+        </section>
+        <!-- sort interface -->
+        <section>
+          <button ng-click="interface.sortByTitle()">Sort by Title</button>
+          <button ng-click="interface.sortByAuthor()">Sort by Author</button>
         </section>
       </section>
 
