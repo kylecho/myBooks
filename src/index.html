@@ -83,13 +83,13 @@
           <section class="detail">
             <h3>{{book.title}}</h3>
             <p>By {{book.author}}</p>
-            <span class="star-rating">
-              <input type="radio" name="rating" value="1"><i></i>
-              <input type="radio" name="rating" value="2"><i></i>
-              <input type="radio" name="rating" value="3"><i></i>
-              <input type="radio" name="rating" value="4"><i></i>
-              <input type="radio" name="rating" value="5"><i></i>
-            </span>
+            <form class="star-rating">
+              <input ng-click="collection.saveRating(book, 1)" ng-model="book.rating" type="radio" name="rating" ng-value="1"><i></i>
+              <input ng-click="collection.saveRating(book, 2)" ng-model="book.rating" type="radio" name="rating" ng-value="2"><i></i>
+              <input ng-click="collection.saveRating(book, 3)" ng-model="book.rating" type="radio" name="rating" ng-value="3"><i></i>
+              <input ng-click="collection.saveRating(book, 4)" ng-model="book.rating" type="radio" name="rating" ng-value="4"><i></i>
+              <input ng-click="collection.saveRating(book, 5)" ng-model="book.rating" type="radio" name="rating" ng-value="5"><i></i>
+            </form>
           </section>
         </section>
       </section>

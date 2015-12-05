@@ -5,7 +5,7 @@ angular.module('app.interface', [])
     interface.addingMode = false;
 
     interface.submit = function () {
-      BooksService.addBook({title:interface.title, author:interface.author});
+      BooksService.addBook({title:interface.title, author:interface.author, rating: 0});
       interface.title = '';
       interface.author = '';
       interface.addingMode = false;

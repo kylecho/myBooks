@@ -4,50 +4,62 @@ angular.module('app.books.model', [])
       {
         title: 'The Great Gatsby',
         author: 'F. Scott Fitzgerald',
+        rating: 3
       },
       {
         title: '1984',
         author: 'George Orwell',
+        rating: 4
       },
       {
         title: 'To Kill a Mockingbird',
         author: 'Harper Lee',
+        rating: 5
       },
       {
         title: 'The Corrections',
         author: 'Jonathan Franzen',
+        rating: 0
       },
       {
         title: 'The Kite Runner',
         author: 'Khaled Hosseini',
+        rating: 0
       },
       {
         title: 'The Road',
         author: 'Cormac McCarthy',
+        rating: 0
       },
       {
         title: 'Life of Pi',
         author: 'Yann Martel',
+        rating: 0
       },
       {
         title: 'Atonement',
         author: 'Ian McEwan',
+        rating: 0
       },
       {
         title: 'Gilead',
         author: 'Marilynne Robinson',
+        rating: 0
       },
       {
         title: 'Bel Canto',
         author: 'Ann Patchett',
+        rating: 0
       },
       {
         title: 'The Help',
         author: 'Kathryn Stockett',
+        rating: 0
       },
       {
         title: 'The Historian',
         author: 'Eliabeth Kostova',
+        rating: 0
       }
     ];
 
@@ -117,6 +129,8 @@ angular.module('app.books.model', [])
         alert('The book with the same title already exists in your collection. Please try again.');
       } else {
         books.push(book);
+        console.log('A book with a title, "' + book.title + '" by ' + book.author + ' has been successfully registered.');
+        console.dir(books);
       }
     }
 
@@ -132,11 +146,22 @@ angular.module('app.books.model', [])
       isSorted.author = !isSorted.author;
     }
 
+    function saveRating (book, rating) {
+      for (var i = 0; i < books.length; i++) {
+        if (books[i].title.toUpperCase() === book.title.toUpperCase()) {
+          books[i].rating = rating;
+          console.log('Rating saved for the book with a title, "' + books[i].title + '" with ' + books[i].rating + ' stars.');
+          console.dir(books);
+        }
+      }
+    }
+
     return {
       isDup: isDup,
       getBooks: getBooks,
       addBook: addBook,
       sortByTitle: sortByTitle,
-      sortByAuthor: sortByAuthor
+      sortByAuthor: sortByAuthor,
+      saveRating: saveRating
     };
   });
