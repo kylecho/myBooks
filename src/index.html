@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <title>My books</title>
 
-    <!-- css -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <!-- css and fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
 
@@ -71,8 +71,9 @@
 
         <!-- sort interface -->
         <section class="card sort col-1-4">
-          <button class="btn" ng-click="interface.sortByTitle()">Sort by Title</button>
-          <button class="btn" ng-click="interface.sortByAuthor()">Sort by Author</button>
+          <button class="btn" ng-click="interface.sortByTitle()"><i class="fa fa-sort"></i>Title</button>
+          <button class="btn" ng-click="interface.sortByAuthor()"><i class="fa fa-sort"></i>Author</button>
+          <button class="btn" ng-click="interface.sortByRating()"><i class="fa fa-sort"></i>Rating</button>
         </section>
 
       </section>

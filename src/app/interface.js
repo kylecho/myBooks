@@ -19,4 +19,8 @@ angular.module('app.interface', [])
     interface.sortByAuthor = function () {
       BooksService.sortByAuthor();
     };
+
+    interface.sortByRating = function () {
+      BooksService.sortByRating();
+    };
   });

@@ -65,7 +65,8 @@ angular.module('app.books.model', [])
 
     var isSorted = {
       title: false,
-      author: false
+      author: false,
+      rating: false,
     };
 
     var sorts = {
@@ -104,6 +105,12 @@ angular.module('app.books.model', [])
         } else {
           return 0;
         }
+      },
+      ratingAscending: function(a, b) {
+        return a.rating - b.rating;
+      },
+      ratingDescending: function(a, b) {
+        return b.rating - a.rating;
       }
     };
 
@@ -146,6 +153,12 @@ angular.module('app.books.model', [])
       isSorted.author = !isSorted.author;
     }
 
+    function sortByRating () {
+      var cb = isSorted.rating ? sorts.ratingAscending : sorts.ratingDescending;
+      books = books.sort(cb);
+      isSorted.rating = !isSorted.rating;
+    }
+
     function saveRating (book, rating) {
       for (var i = 0; i < books.length; i++) {
         if (books[i].title.toUpperCase() === book.title.toUpperCase()) {
@@ -162,6 +175,7 @@ angular.module('app.books.model', [])
       addBook: addBook,
       sortByTitle: sortByTitle,
       sortByAuthor: sortByAuthor,
+      sortByRating: sortByRating,
       saveRating: saveRating
     };
   });
