@@ -9,5 +9,5 @@ Currently the data for this application is not persistent. However, it is ready 
 ## Mobile mode with menu closed
 ![mobile-without-menu](http://i.imgur.com/LO0CGGs.png)
 
-## mobile mode with menu opened
+## Mobile mode with menu opened
 ![mobile-with-menu](http://i.imgur.com/umXJ4z3.png)
