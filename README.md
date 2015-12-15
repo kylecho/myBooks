@@ -1,13 +1,13 @@
 # myBooks
 ### A simple book review app developed with a mobile first approach.
 
-Data is not persistent. However, the app is ready to consume data from API if the JSON structure is correctly retrieved from the server.
+Currently the data for this application is not persistent. However, it is ready to consume data from API once a server is correctly set up with the database and JSON structure is correctly retrieved from the server.
 
 ## Desktop mode
-![desktop](http://imgur.com/jFmrMfc)
+![desktop](http://i.imgur.com/jFmrMfc.png)
 
 ## Mobile mode with menu closed
-![mobile-without-menu](http://imgur.com/LO0CGGs)
+![mobile-without-menu](http://i.imgur.com/LO0CGGs.png)
 
 ## mobile mode with menu opened
-![mobile-with-menu](http://imgur.com/umXJ4z3)
+![mobile-with-menu](http://i.imgur.com/umXJ4z3.png)
