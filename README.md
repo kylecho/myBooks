@@ -1,4 +1,4 @@
-# myBooks
+# myBooks [Demo](http://mybooks.surge.sh)
 ### A simple book review app developed with a mobile first approach.
 
 Currently the data for this application is not persistent. However, it is ready to consume data from API once a server is correctly set up with the database and JSON structure is correctly retrieved from the server.
